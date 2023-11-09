@@ -1,10 +1,10 @@
-function Basket(basketItems, setBasketItems){    
-    this.basketItems = basketItems;
-    this.setBasketItems = setBasketItems;
+function Basket(entries, setEntries){    
+    this.entries = entries;
+    this.setEntries = setEntries;
 
     this.add = (product) => {              
         let found = false;
-        let newItems = this.basketItems.map(entry => {
+        let newEntries = this.entries.map(entry => {
             if(entry.product === product){
                 found = true;
                 if(product.available > entry.quantity){
@@ -14,19 +14,19 @@ function Basket(basketItems, setBasketItems){
             return entry;
         });
         if(!found){
-            newItems.push({product, quantity: 1})
+            newEntries.push({product, quantity: 1});
         }
-        this.setBasketItems(newItems);
+        this.setEntries(newEntries);
     };
 
     this.set = (product, quantity) => {
         if(product.available < quantity){
             return;
         }
-        let newItems = [];  
+        let newEntries = [];  
         if(quantity > 0){
             let found = false;
-            newItems = this.basketItems.map(entry => {
+            newEntries = this.entries.map(entry => {
                 if(entry.product === product){
                     found = true;
                     entry.quantity = quantity;
@@ -34,19 +34,20 @@ function Basket(basketItems, setBasketItems){
                 return entry;
             });  
             if(!found){
-                newItems.push({product, quantity})
+                newEntries.push({product, quantity});
             }
         }
         else{
-            newItems = this.basketItems.filter(entry => entry.product !== product)
+            newEntries = this.entries.filter(entry => entry.product !== product);
         }
-        this.setBasketItems(newItems);
+        this.setEntries(newEntries);
     }
     
-    this.getTotalAmount = () => this.basketItems.reduce((a, p) => a + p.quantity * p.product.price, 0); 
-    this.getTotalCount = () => this.basketItems.reduce((a, p) => a + p.quantity, 0); 
+    this.clear = () => this.setEntries([]);
 
-    this.clear = () => this.setBasketItems([]);
+    this.getTotalAmount = () => this.entries.reduce((a, p) => a + p.quantity * p.product.price, 0); 
+
+    this.getTotalCount = () => this.entries.reduce((a, p) => a + p.quantity, 0); 
 }
 
 export default Basket;

@@ -7,7 +7,7 @@ const PageHeader = ({basket}) => {
         return count > 0 ? ` (${count})` : '';
     };
 
-    return(
+    return (
         <header className="header position__center text__color_light">
             <div className="header__container">
                 <div className="header__logo">

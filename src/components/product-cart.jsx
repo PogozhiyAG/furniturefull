@@ -5,8 +5,8 @@ const ProductCart = ({product, basket}) => {
     
     const addToCartClickHandler = () => basket.add(product);
 
-    return(
-        <div className="product__box" key={product.name}>
+    return (
+        <div className="product__box">
             <div className="product__image-command-container">
                 <div className="product__command-bar">
                     <img className="product__command-button" src={require('../img/heart-outline.svg').default} alt="Добавить в избранное" />
@@ -16,8 +16,7 @@ const ProductCart = ({product, basket}) => {
             </div>
             <h3 className="product__title text__size_lb">{product.name}</h3>
             <p className="product__desc text__size_s text__color_gray">{product.description}</p>
-            <p className="text__size_lb text__color_quite-dark">{utils.formatCurrency(product.price)} руб.</p>
-    
+            <p className="text__size_lb text__color_quite-dark">{utils.formatCurrency(product.price)} руб.</p>    
         </div>
     );
 }

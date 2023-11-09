@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import catalogData from "./data"
 import CatalogPage from "./pages/CatalogPage";
 import CartPage from "./pages/CartPage";
-import Basket from "./Basket";
+import catalogData from "./data"
+import Basket from "./basket";
 
 
 const App = () => {
-    const [basketItems, setBasketItems] = useState([]);
+    const [entries, setEntries] = useState([]);
 
-    const basket = new Basket(basketItems, setBasketItems);
+    const basket = new Basket(entries, setEntries);
 
     const router = createBrowserRouter([
         {
@@ -22,9 +22,7 @@ const App = () => {
         },
     ]);
 
-    return (
-        <RouterProvider router={router} />
-    );
+    return <RouterProvider router={router} />;
 };
 
 export default App;

@@ -7,9 +7,9 @@ const CheckoutForm = ({basket}) => {
     return (    
         <form className="cart-form">
             <h3 className="cart-form__title"> Оформление заказа</h3>
-            <input onChange={dummy} className="cart-form__input text-input text__size_s" type="text" name="" id="" placeholder="Имя Фамилия"></input>
-            <input onChange={dummy} className="cart-form__input text-input text__size_s" type="tel" name="" id="" placeholder="+ 7 904 000 80 80"></input>
-            <input onChange={dummy} className="cart-form__input text-input text__size_s" type="text" name="" id="" placeholder="Адрес Доставки"></input>
+            <input onChange={dummy} className="cart-form__input text-input text__size_s" type="text" placeholder="Имя Фамилия"></input>
+            <input onChange={dummy} className="cart-form__input text-input text__size_s" type="tel"  placeholder="+ 7 904 000 80 80"></input>
+            <input onChange={dummy} className="cart-form__input text-input text__size_s" type="text" placeholder="Адрес Доставки"></input>
             <div className="cart-form__price-box">
                 <span className="text__size_l">Итого: </span>
                 <span className="text__size_lb">{utils.formatCurrency(basket.getTotalAmount())} руб.</span>

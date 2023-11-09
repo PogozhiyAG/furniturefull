@@ -21,7 +21,7 @@ const CartPage = ({ basket }) => {
                         <span>К-во</span>
                     </div>
                     
-                    {basket.basketItems.map(entry => <ProductBasketCart key={entry.product.name} productEntry={entry} basket={basket}/>)}
+                    { basket.entries.map(entry => <ProductBasketCart key={entry.product.name} productEntry={entry} basket={basket}/>) }
 
                     <div className="cart-command-bar">
                         <button className="cart-command-bar__button" onClick={clearBasketClickHandler}>Очистить корзину</button>

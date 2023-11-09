@@ -13,7 +13,7 @@ const ProductList = ( {catalogData, basket} ) => {
         }
     }
 
-    return(
+    return (
         <>
             <section className="position__center position__gap_small">
                 <div className="command-bar">
@@ -26,7 +26,7 @@ const ProductList = ( {catalogData, basket} ) => {
                     {
                         catalogData
                             .sort(getOrderFunction())
-                            .map(product => (<ProductCart key={product.name} product={product} basket={basket}/>)) 
+                            .map(product => <ProductCart key={product.name} product={product} basket={basket}/>) 
                     }
                 </div>
             </section>

@@ -8,15 +8,13 @@ const ProductBasketCart = ({productEntry, basket}) => {
     const onRemoveItemClickHandler = (event) => {
         basket.set(productEntry.product, 0);
         event.preventDefault();
-    }   
+    };
 
-    return(
+    return (
         <div className="cart-item">
             <img className="cart-item__product-image" src={require('../img/product/' + productEntry.product.imageUrl)} alt={productEntry.product.name}></img>
             <div className="cart-item__box">
-                <a href="#" className="link_hover">
-                    <h3 className="text__size_lb">{productEntry.product.name}</h3>
-                </a>
+                <h3 className="text__size_lb">{productEntry.product.name}</h3>
                 <p className="cart-item__product-desc text__size_s text__color_gray">{productEntry.product.description}</p>
                 <p className="text__size_mb text__color_quite-dark">{utils.formatCurrency(productEntry.product.price)} руб.</p>
                 <div className="cart-item__command-bar text__size_s">
@@ -27,7 +25,6 @@ const ProductBasketCart = ({productEntry, basket}) => {
             
             <NumericMinMax min={1} max={productEntry.product.available} value={productEntry.quantity} onchange={onCountChange}/>
         </div>
-        
     );
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import utils from "../utils";
 
 const CheckoutForm = ({basket}) => {
     const dummy = () => 1;
@@ -11,7 +12,7 @@ const CheckoutForm = ({basket}) => {
             <input onChange={dummy} className="cart-form__input text-input text__size_s" type="text" name="" id="" placeholder="Адрес Доставки"></input>
             <div className="cart-form__price-box">
                 <span className="text__size_l">Итого: </span>
-                <span className="text__size_lb">{basket.getTotalAmount()} руб.</span>
+                <span className="text__size_lb">{utils.formatCurrency(basket.getTotalAmount())} руб.</span>
             </div>
             <input onChange={dummy} className="cart-form__button text__size_m" type="button" value="Оформить заказ" />
         </form>

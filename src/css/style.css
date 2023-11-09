@@ -183,6 +183,7 @@ body {
   -moz-column-gap: 32px;
        column-gap: 32px;
   row-gap: 56px;
+  margin-bottom: 100px;
 }
 .product__box {
   max-width: 378px;
@@ -354,6 +355,9 @@ body {
   background: #F7F6F6;
   border-radius: 6px;
   border: none;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 600;
 }
 .numeric-input__button {
   border-style: none;
@@ -393,7 +397,7 @@ body {
     line-height: 15px;
   }
   .text__size_s {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 17px;
   }
@@ -414,17 +418,17 @@ body {
   }
   .text__size_l {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 32px;
   }
   .text__size_lb {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 29px;
   }
   .text__size_lbb {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 36px;
   }
   .text__size_xl {
@@ -441,6 +445,9 @@ body {
     font-weight: 600;
     font-size: 48px;
     line-height: 59px;
+  }
+  .header {
+    margin: 0;
   }
   .header__container {
     padding: 50px 20px 16px 16px;
@@ -467,7 +474,12 @@ body {
     justify-content: center;
     row-gap: 32px;
   }
+  .product__box {
+    max-width: 343px;
+  }
   .product__image {
+    width: 343px;
+    height: 230px;
     margin-bottom: 9px;
   }
   .product__title {
@@ -476,8 +488,8 @@ body {
   .product__desc {
     margin-bottom: 8px;
   }
-  .cart {
-    justify-content: center;
+  .cart-item-list__header {
+    display: none;
   }
   .cart-item {
     display: flex;

@@ -15,7 +15,7 @@
     line-height: 15px;
   }
   .text__size_s {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 17px;
   }
@@ -36,17 +36,17 @@
   }
   .text__size_l {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 32px;
   }
   .text__size_lb {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 29px;
   }
   .text__size_lbb {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 36px;
   }
   .text__size_xl {
@@ -63,6 +63,9 @@
     font-weight: 600;
     font-size: 48px;
     line-height: 59px;
+  }
+  .header {
+    margin: 0;
   }
   .header__container {
     padding: 50px 20px 16px 16px;
@@ -89,7 +92,12 @@
     justify-content: center;
     row-gap: 32px;
   }
+  .product__box {
+    max-width: 343px;
+  }
   .product__image {
+    width: 343px;
+    height: 230px;
     margin-bottom: 9px;
   }
   .product__title {
@@ -98,8 +106,8 @@
   .product__desc {
     margin-bottom: 8px;
   }
-  .cart {
-    justify-content: center;
+  .cart-item-list__header {
+    display: none;
   }
   .cart-item {
     display: flex;

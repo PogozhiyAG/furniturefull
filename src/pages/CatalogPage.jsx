@@ -4,7 +4,7 @@ import ProductList from "../components/product-list"
 
 export default ({catalogData, basket}) => (
     <>
-      <PageHeader />
+      <PageHeader basket={ basket }/>
       <ProductList catalogData={catalogData} basket={basket} />
     </>
 );

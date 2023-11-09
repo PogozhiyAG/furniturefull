@@ -1,4 +1,5 @@
 import React from "react";
+import utils from "../utils";
 
 const ProductCart = ({product, basket}) => {
     
@@ -15,7 +16,7 @@ const ProductCart = ({product, basket}) => {
             </div>
             <h3 className="product__title text__size_lb">{product.name}</h3>
             <p className="product__desc text__size_s text__color_gray">{product.description}</p>
-            <p className="text__size_lb text__color_quite-dark">{product.price} руб.</p>
+            <p className="text__size_lb text__color_quite-dark">{utils.formatCurrency(product.price)} руб.</p>
     
         </div>
     );

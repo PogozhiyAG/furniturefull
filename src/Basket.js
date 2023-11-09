@@ -42,8 +42,9 @@ function Basket(basketItems, setBasketItems){
         }
         this.setBasketItems(newItems);
     }
-
+    
     this.getTotalAmount = () => this.basketItems.reduce((a, p) => a + p.quantity * p.product.price, 0); 
+    this.getTotalCount = () => this.basketItems.reduce((a, p) => a + p.quantity, 0); 
 
     this.clear = () => this.setBasketItems([]);
 }

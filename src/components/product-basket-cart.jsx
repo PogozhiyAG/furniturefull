@@ -1,5 +1,6 @@
 import React from "react";
 import NumericMinMax from "./numeric-min-max"
+import utils from "../utils";
 
 const ProductBasketCart = ({productEntry, basket}) => {
     const onCountChange = (count) => basket.set(productEntry.product, count);
@@ -17,7 +18,7 @@ const ProductBasketCart = ({productEntry, basket}) => {
                     <h3 className="text__size_lb">{productEntry.product.name}</h3>
                 </a>
                 <p className="cart-item__product-desc text__size_s text__color_gray">{productEntry.product.description}</p>
-                <p className="text__size_mb text__color_quite-dark">{productEntry.product.price} руб.</p>
+                <p className="text__size_mb text__color_quite-dark">{utils.formatCurrency(productEntry.product.price)} руб.</p>
                 <div className="cart-item__command-bar text__size_s">
                     <a href="#" className="text__underline">Избранные</a>
                     <a href="" onClick={onRemoveItemClickHandler} className="text__underline">Удалить</a>

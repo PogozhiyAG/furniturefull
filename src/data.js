@@ -38,9 +38,9 @@ const catalogData = [
     {
         name: 'Шкаф NASTAN',
         description: 'Мебель может быть оснащена разнообразными системами подсветки.',
-        price: 40000,
+        price: 80000,
         imageUrl: 'nastan.png',
-        available: 1
+        available: 2
     },
 ];
 

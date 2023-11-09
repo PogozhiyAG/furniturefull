@@ -28,7 +28,7 @@
                 line-height: 15px;
             }
             &_s{
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: 400;
                 line-height: 17px;
             }
@@ -49,17 +49,17 @@
             }
             &_l{            
                 font-weight: 400;
-                font-size: 16px;
+                font-size: 18px;
                 line-height: 32px;
             }
             &_lb{            
                 font-weight: 500;
-                font-size: 16px;
+                font-size: 18px;
                 line-height: 29px;
             }
             &_lbb{
                 font-weight: 600;
-                font-size: 16px;
+                font-size: 18px;
                 line-height: 36px;
             }
             &_xl{
@@ -82,6 +82,7 @@
 
 
     .header{
+        margin: 0;
         &__container{
             padding: 50px 20px 16px 16px;
         }            
@@ -121,7 +122,13 @@
             row-gap: 32px;
         }
 
-        &__image {            
+        &__box {
+            max-width: 343px;
+        }
+
+        &__image {   
+            width: 343px;
+            height: 230px;         
             margin-bottom: 9px;
         }
     
@@ -136,7 +143,11 @@
 
 
     .cart{
-        justify-content: center; 
+        &-item-list{
+            &__header{
+                display: none;
+            }
+        }
 
         &-item{
             display: flex;        

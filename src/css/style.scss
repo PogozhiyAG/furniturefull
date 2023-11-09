@@ -203,6 +203,7 @@ body {
         justify-items: center;
         column-gap: 32px;
         row-gap: 56px;
+        margin-bottom: 100px;
     }
 
     &__box {
@@ -408,6 +409,9 @@ body {
         background: #F7F6F6;
         border-radius: 6px;
         border: none;
+        font-family: 'Poppins';
+        font-size: 14px;
+        font-weight: 600;
     }
     &__button{
         border-style: none;

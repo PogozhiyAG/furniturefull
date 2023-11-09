@@ -12,7 +12,7 @@ const CartPage = ({ basket }) => {
 
     return (
         <>
-            <PageHeader />
+            <PageHeader basket={ basket }/>
 
             <section className="cart position__center position__gap_normal">
                 <div className="cart-item-list">

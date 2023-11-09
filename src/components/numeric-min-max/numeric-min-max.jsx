@@ -1,32 +1,30 @@
 import React, { useState } from "react";
 import './numeric-min-max.css';
 
-const NumericMinMax = ({min, max, value, onchange}) => {
-    const [current, setCurrent] = useState(value);
+const NumericMinMax = ({min, max, initialValue, onchange}) => {
+    const [current, setCurrent] = useState(initialValue);
 
-    const trySetValue = (newValue) => {
-        const number = Number(newValue);
-        if(isNaN(number)){
-            return;
+    const isValid = value => !isNaN(value) && value >= min && value <= max;
+    
+    const trySetValue = (last, newValue) => {
+        if(isValid(newValue)){
+            if(onchange){
+                onchange(newValue);
+            }
+            return newValue;
         }
-        if(number < min || number > max){
-            return;
-        }
-        setCurrent(number);
-        if(onchange){
-            onchange(number);
-        }
+        return last;
     };
 
-    const onCountChangeHandler = (event) => trySetValue(event.target.value);
+    const input = event => setCurrent(last => trySetValue(last, Number(event.target.value)));
 
-    const up = () => trySetValue(current + 1);
+    const up = () => setCurrent(last => trySetValue(last, last + 1));
 
-    const down = () => trySetValue(current - 1);
+    const down = () => setCurrent(last => trySetValue(last, last - 1));
     
     return (    
         <span className="numeric-input__container">
-            <input onInput={onCountChangeHandler} className="numeric-input__input" pattern="[0-9]+" value={current} />
+            <input onInput={input} className="numeric-input__input" pattern="[0-9]+" value={current} />
             <button onClick={up} className="numeric-input__button numeric-input__button_up">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M6 9L8 7L10 9" stroke="#CACDD8" strokeWidth="1.6" strokeLinecap="round"/>

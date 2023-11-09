@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import '../../css/style.css'
+import './page-header.css'
 
 const PageHeader = ({basket}) => { 
     const getBasketCountText = () => {
@@ -18,8 +20,8 @@ const PageHeader = ({basket}) => {
                     <Link to="/cart" className="link_hover">Корзина{getBasketCountText()}</Link>
                 </nav>
                 <nav className="header__nav-container-mobile">                
-                    <Link to="/"><img src={require("../img/catalog.svg").default} alt="Каталог"/></Link>
-                    <Link to="/cart"><img src={require("../img/cart.svg").default} alt="Корзина" /></Link>
+                    <Link to="/"><img src={require("./img/catalog.svg").default} alt="Каталог"/></Link>
+                    <Link to="/cart"><img src={require("./img/cart.svg").default} alt="Корзина" /></Link>
                 </nav>
             </div>
         </header>

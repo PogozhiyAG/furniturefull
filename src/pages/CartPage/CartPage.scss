@@ -14,52 +14,6 @@
         }
     }
     
-
-    &-item{
-        display: flex;        
-        padding-top: 25px;
-        padding-bottom: 32px; 
-        gap: 32px;
-        border-top: 0.5px solid #CACDD8;
-
-        &__box{    
-            flex-grow: 1;    
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        &__product-image-container{
-            display: inline;
-        }
-
-        &__product-image{
-            width: 173px;
-            height: 173px;            
-        }
-
-        &__product-desc{
-            max-width: 276px;
-        }
-
-        &__count{
-            width: 70px;
-            height: 50px;
-            text-align: right;
-            padding-right: 24px;
-            outline: none;
-            background: #F7F6F6;
-            border-radius: 6px;
-            border: none;
-        }
-
-        &__command-bar{
-            display: flex;   
-            gap: 32px
-        }
-    }
-
-
     &-command-bar{
         margin-top: 16px;        
         display: flex;
@@ -83,51 +37,7 @@
     }
 
 
-    &-form{
-        display: flex;
-        flex-direction: column;        
-        height: 560px;
-        width: 343px;
-        background: #F7F6F6;
-        border-radius: 20px;
-        padding: 42px 32px;
     
-        &__title{
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 24px;
-        }
-    
-        &__input{
-            border: none;
-            border-bottom: 1px solid #CACDD8;
-            width: 288px;
-            margin-right: 32px;
-            margin-top: 44px;
-        }
-    
-        &__price-box{
-            text-align: center;
-            margin-top: 64px;
-        }
-    
-        &__button {
-            cursor: pointer;
-            background: transparent;
-            color: #000000;
-            border: 1px solid #000;            
-            border-radius: 20px;
-            width: 100%;
-            height: 46px;
-            margin-top: 16px;
-        
-            &:hover {
-                background: #000000;
-                color: #FFFFFF;
-            }
-        }
-    }
 
 }
 
@@ -140,33 +50,12 @@
             }
         }
 
-        &-item{
-            display: flex;        
-            padding-top: 18px;
-            padding-bottom: 24px; 
-
-
-            &__product-image{
-                display: none;
-            }
-
-            &__product-desc{
-                margin-top: -6px;
-            }
-        }
-
         &-command-bar{
             &__button {
                 font-weight: 400;
                 font-size: 12px;
                 line-height: 15px;
                 padding: 8px 16px;
-            }
-        }
-
-        &-form{
-            &__input{
-                margin-right: 0;
             }
         }
     }

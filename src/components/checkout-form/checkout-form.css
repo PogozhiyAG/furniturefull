@@ -1,0 +1,46 @@
+.cart-form {
+  display: flex;
+  flex-direction: column;
+  height: 560px;
+  width: 343px;
+  background: #F7F6F6;
+  border-radius: 20px;
+  padding: 42px 32px;
+}
+.cart-form__title {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+.cart-form__input {
+  border: none;
+  border-bottom: 1px solid #CACDD8;
+  width: 288px;
+  margin-right: 32px;
+  margin-top: 44px;
+}
+.cart-form__price-box {
+  text-align: center;
+  margin-top: 64px;
+}
+.cart-form__button {
+  cursor: pointer;
+  background: transparent;
+  color: #000000;
+  border: 1px solid #000;
+  border-radius: 20px;
+  width: 100%;
+  height: 46px;
+  margin-top: 16px;
+}
+.cart-form__button:hover {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+@media (max-width: 600px) {
+  .cart-form__input {
+    margin-right: 0;
+  }
+}/*# sourceMappingURL=checkout-form.css.map */

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import ProductCart from "./product-cart";
+import ProductCart from "../product-cart/product-cart";
+import './product-list.css'
 
 const ProductList = ( {catalogData, basket} ) => {
     const [sortOrder, setSortOrder] = useState('');
@@ -16,13 +17,13 @@ const ProductList = ( {catalogData, basket} ) => {
     return (
         <>
             <section className="position__center position__gap_small">
-                <div className="command-bar">
-                    <select className="command-bar-select text__size_m" onChange={onSortOrderChangeHandler}>                
+                <div className="product-list__command-bar">
+                    <select className="product-list__command-bar_select text__size_m" onChange={onSortOrderChangeHandler}>                
                         <option value="price_asc">Порядок: сперва дешевые</option>
                         <option value="price_desc">Порядок: сперва дорогие</option>                
                     </select>
                 </div>
-                <div className="product__list-content">
+                <div className="product-list__content">
                     {
                         catalogData
                             .sort(getOrderFunction())

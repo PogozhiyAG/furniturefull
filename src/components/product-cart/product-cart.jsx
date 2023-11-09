@@ -1,5 +1,6 @@
 import React from "react";
-import utils from "../utils";
+import utils from "../../utils";
+import './product-cart.css';
 
 const ProductCart = ({product, basket}) => {
     
@@ -9,10 +10,10 @@ const ProductCart = ({product, basket}) => {
         <div className="product__box">
             <div className="product__image-command-container">
                 <div className="product__command-bar">
-                    <img className="product__command-button" src={require('../img/heart-outline.svg').default} alt="Добавить в избранное" />
-                    <img className="product__command-button" onClick={addToCartClickHandler} src={require('../img/shopping-bag-line.svg').default} alt="Добавить в корзину" />
+                    <img className="product__command-button" src={require('../../img/heart-outline.svg').default} alt="Добавить в избранное" />
+                    <img className="product__command-button" onClick={addToCartClickHandler} src={require('../../img/shopping-bag-line.svg').default} alt="Добавить в корзину" />
                 </div>
-                <img className="product__image" src={require('../img/product/' + product.imageUrl)} alt={product.name}/>
+                <img className="product__image" src={require('../../img/product/' + product.imageUrl)} alt={product.name}/>
             </div>
             <h3 className="product__title text__size_lb">{product.name}</h3>
             <p className="product__desc text__size_s text__color_gray">{product.description}</p>

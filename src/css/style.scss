@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-@import 'vars';
 
 * {
     padding: 0;
@@ -141,38 +140,6 @@ body {
 .link_hover:hover {    
     text-decoration: underline;
 }
-
-
-
-.command-bar {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;    
-    gap: $gap;
-    margin-bottom: 32px;
-
-    &-select {
-        width: 295px;
-        height: 41px;
-        border: 1px solid #C4C4C4;
-        border-radius: 20px;        
-        outline: none;
-        padding-left: 15px;
-        padding-right: 50px;        
-        color: #000000;
-        appearance: none;
-        background: url(../img/select-drop-down-arrow.svg);
-        background-repeat: no-repeat;
-        background-position-x: calc(100% - 20px);
-        background-position-y: center;
-    }
-}
-
-
-
-
 
 
 @import 'mobile';

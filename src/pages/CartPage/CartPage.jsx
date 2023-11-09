@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../../components/page-header/page-header";
-import ProductBasketCart from "../../components/product-basket-cart";
-import CheckoutForm from "../../components/checkout-form";
+import ProductBasketCart from "../../components/product-basket-cart/product-basket-cart";
+import CheckoutForm from "../../components/checkout-form/checkout-form";
 import './CartPage.css'
 
 const CartPage = ({ basket }) => {
@@ -13,7 +13,7 @@ const CartPage = ({ basket }) => {
 
     return (
         <>
-            <PageHeader basket={ basket }/>
+            <PageHeader basket={basket}/>
 
             <section className="cart position__center position__gap_normal">
                 <div className="cart-item-list">

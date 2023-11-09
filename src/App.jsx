@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import CartPage from "./pages/CartPage/CartPage";
-import catalogData from "./data"
-import Basket from "./basket";
-
+import catalogData from "./data/data"
+import Basket from "./js/basket";
+import './css/style.css'
 
 const App = () => {
     const [entries, setEntries] = useState([]);

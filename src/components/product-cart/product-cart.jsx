@@ -1,5 +1,5 @@
 import React from "react";
-import utils from "../../utils";
+import utils from "../../js/utils";
 import './product-cart.css';
 
 const ProductCart = ({product, basket}) => {

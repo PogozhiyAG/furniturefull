@@ -1,6 +1,6 @@
 import React from "react";
 import NumericMinMax from "../numeric-min-max/numeric-min-max";
-import utils from "../../utils";
+import utils from "../../js/utils";
 import './product-basket-cart.css'
 
 const ProductBasketCart = ({productEntry, basket}) => {

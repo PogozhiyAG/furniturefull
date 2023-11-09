@@ -7,9 +7,9 @@ import Basket from "./js/basket";
 import './css/style.css'
 
 const App = () => {
-    const [entries, setEntries] = useState([]);
+    const [basketEntries, setbasketEntries] = useState([]);
 
-    const basket = new Basket(entries, setEntries);
+    const basket = new Basket(basketEntries, setbasketEntries);
 
     const router = createBrowserRouter([
         {

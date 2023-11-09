@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CatalogPage from "./pages/CatalogPage";
-import CartPage from "./pages/CartPage";
+import CatalogPage from "./pages/CatalogPage/CatalogPage";
+import CartPage from "./pages/CartPage/CartPage";
 import catalogData from "./data"
 import Basket from "./basket";
 

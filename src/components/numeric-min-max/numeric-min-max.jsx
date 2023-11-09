@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './numeric-min-max.css';
 
 const NumericMinMax = ({min, max, value, onchange}) => {
     const [current, setCurrent] = useState(value);

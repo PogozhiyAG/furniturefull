@@ -1,0 +1,138 @@
+.cart {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+  row-gap: 64px;
+}
+.cart-item-list {
+  flex-grow: 1;
+}
+.cart-item-list__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.cart-item {
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 32px;
+  gap: 32px;
+  border-top: 0.5px solid #CACDD8;
+}
+.cart-item__box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cart-item__product-image-container {
+  display: inline;
+}
+.cart-item__product-image {
+  width: 173px;
+  height: 173px;
+}
+.cart-item__product-desc {
+  max-width: 276px;
+}
+.cart-item__count {
+  width: 70px;
+  height: 50px;
+  text-align: right;
+  padding-right: 24px;
+  outline: none;
+  background: #F7F6F6;
+  border-radius: 6px;
+  border: none;
+}
+.cart-item__command-bar {
+  display: flex;
+  gap: 32px;
+}
+.cart-command-bar {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
+.cart-command-bar__button {
+  cursor: pointer;
+  background: transparent;
+  color: #000000;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 8px 32px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+.cart-command-bar__button:hover {
+  background: #000000;
+  color: #FFFFFF;
+}
+.cart-form {
+  display: flex;
+  flex-direction: column;
+  height: 560px;
+  width: 343px;
+  background: #F7F6F6;
+  border-radius: 20px;
+  padding: 42px 32px;
+}
+.cart-form__title {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+.cart-form__input {
+  border: none;
+  border-bottom: 1px solid #CACDD8;
+  width: 288px;
+  margin-right: 32px;
+  margin-top: 44px;
+}
+.cart-form__price-box {
+  text-align: center;
+  margin-top: 64px;
+}
+.cart-form__button {
+  cursor: pointer;
+  background: transparent;
+  color: #000000;
+  border: 1px solid #000;
+  border-radius: 20px;
+  width: 100%;
+  height: 46px;
+  margin-top: 16px;
+}
+.cart-form__button:hover {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+@media (max-width: 600px) {
+  .cart-item-list__header {
+    display: none;
+  }
+  .cart-item {
+    display: flex;
+    padding-top: 18px;
+    padding-bottom: 24px;
+  }
+  .cart-item__product-image {
+    display: none;
+  }
+  .cart-item__product-desc {
+    margin-top: -6px;
+  }
+  .cart-command-bar__button {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 8px 16px;
+  }
+  .cart-form__input {
+    margin-right: 0;
+  }
+}/*# sourceMappingURL=CartPage.css.map */

@@ -1,6 +1,7 @@
 import React from "react";
-import PageHeader from "../components/page-header"
-import ProductList from "../components/product-list"
+import PageHeader from "../../components/page-header/page-header"
+import ProductList from "../../components/product-list"
+import './CatalogPage.css'
 
 const CatalogPage = ({catalogData, basket}) => (
     <>

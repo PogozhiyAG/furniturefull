@@ -1,5 +1,5 @@
 import React from "react";
-import NumericMinMax from "./numeric-min-max"
+import NumericMinMax from "./numeric-min-max/numeric-min-max"
 import utils from "../utils";
 
 const ProductBasketCart = ({productEntry, basket}) => {

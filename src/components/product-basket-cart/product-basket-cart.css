@@ -17,6 +17,8 @@
 .cart-item__product-image {
   width: 173px;
   height: 173px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .cart-item__product-desc {
   max-width: 276px;

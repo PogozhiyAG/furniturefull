@@ -3,44 +3,49 @@ function Basket(entries, setEntries){
     this.setEntries = setEntries;
 
     this.add = (product) => {              
-        let found = false;
-        let newEntries = this.entries.map(entry => {
-            if(entry.product === product){
-                found = true;
-                if(product.available > entry.quantity){
-                    entry.quantity += 1;
+        this.setEntries(lastEntries => {
+            let found = false;
+            let newEntries = lastEntries.map(entry => {
+                if(entry.product === product){
+                    found = true;
+                    if(product.available > entry.quantity){
+                        entry.quantity += 1;
+                    }
                 }
+                return entry;
+            });
+            if(!found){
+                newEntries.push({product, quantity: 1});
             }
-            return entry;
+            return newEntries;
         });
-        if(!found){
-            newEntries.push({product, quantity: 1});
-        }
-        this.setEntries(newEntries);
     };
 
     this.set = (product, quantity) => {
-        if(product.available < quantity){
+        if(quantity < 0 || quantity > product.available){
             return;
         }
-        let newEntries = [];  
-        if(quantity > 0){
-            let found = false;
-            newEntries = this.entries.map(entry => {
-                if(entry.product === product){
-                    found = true;
-                    entry.quantity = quantity;
+
+        this.setEntries(lastEntries => {
+            let newEntries = [];  
+            if(quantity > 0){
+                let found = false;
+                newEntries = lastEntries.map(entry => {
+                    if(entry.product === product){
+                        found = true;
+                        entry.quantity = quantity;
+                    }
+                    return entry;
+                });  
+                if(!found){
+                    newEntries.push({product, quantity});
                 }
-                return entry;
-            });  
-            if(!found){
-                newEntries.push({product, quantity});
             }
-        }
-        else{
-            newEntries = this.entries.filter(entry => entry.product !== product);
-        }
-        this.setEntries(newEntries);
+            else{
+                newEntries = lastEntries.filter(entry => entry.product !== product);
+            }
+            return newEntries;
+        });
     }
     
     this.clear = () => this.setEntries([]);

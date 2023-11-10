@@ -18,7 +18,8 @@
 
     &__product-image{
         width: 173px;
-        height: 173px;            
+        height: 173px;
+        object-fit: cover;
     }
 
     &__product-desc{

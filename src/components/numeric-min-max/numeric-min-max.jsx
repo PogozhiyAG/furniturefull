@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './numeric-min-max.css';
 
 const NumericMinMax = ({min, max, initialValue, onchange}) => {
     const [current, setCurrent] = useState(initialValue);
 
+    useEffect(() => {
+        if(onchange){
+            onchange(current);
+        }
+    }, [current]);
+
     const isValid = value => !isNaN(value) && value >= min && value <= max;
     
     const trySetValue = (last, newValue) => {
         if(isValid(newValue)){
-            if(onchange){
-                onchange(newValue);
-            }
             return newValue;
         }
         return last;

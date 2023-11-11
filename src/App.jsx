@@ -4,7 +4,7 @@ import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import CartPage from "./pages/CartPage/CartPage";
 import catalogData from "./data/data"
 import Basket from "./js/basket";
-import './css/style.css'
+import './css/style.scss'
 
 const App = () => {    
     const [basketEntries, setbasketEntries] = useState([]);

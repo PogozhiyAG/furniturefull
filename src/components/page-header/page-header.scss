@@ -10,6 +10,7 @@
     }
 
     &__nav-container{
+        position: relative;
         display: flex; 
         gap: 32px;       
     }
@@ -24,6 +25,23 @@
         font-size: 36px;
     }
 }
+
+.popup-basket{
+    &__container{
+        position: absolute;
+        bottom: -380px;
+        right: -5px;
+        background-color: #ffffff;
+        width: 540px;
+        height: 380px;
+        overflow: auto;
+        z-index: 10;
+        padding: 32px;
+        color: black;
+        border: 1px black solid;
+    }   
+}
+
 
 @media(max-width: 600px){
     .header{

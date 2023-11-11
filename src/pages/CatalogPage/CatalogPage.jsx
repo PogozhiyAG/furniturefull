@@ -4,7 +4,7 @@ import ProductList from "../../components/product-list/product-list"
 
 const CatalogPage = ({catalogData, basket}) => (
     <>
-      <PageHeader basket={ basket }/>
+      <PageHeader basket={ basket } useBasketPopup={true}/>
       <ProductList catalogData={catalogData} basket={basket} />
     </>
 );

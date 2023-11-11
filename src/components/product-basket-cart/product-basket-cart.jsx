@@ -3,7 +3,7 @@ import NumericMinMax from "../numeric-min-max/numeric-min-max";
 import utils from "../../js/utils";
 import './product-basket-cart.scss'
 
-const ProductBasketCart = ({productEntry, basket}) => {
+const ProductBasketCart = ({productEntry, basket, hideCountEditor}) => {
     const onCountChange = (count) => basket.set(productEntry.product, count);
 
     const onRemoveItemClickHandler = (event) => {
@@ -24,7 +24,9 @@ const ProductBasketCart = ({productEntry, basket}) => {
                 </div>
             </div>
             
-            <NumericMinMax min={1} max={productEntry.product.available} value={productEntry.quantity} onChange={onCountChange}/>
+            {!hideCountEditor &&
+                <NumericMinMax min={1} max={productEntry.product.available} value={productEntry.quantity} onChange={onCountChange}/>
+            }
         </div>
     );
 }

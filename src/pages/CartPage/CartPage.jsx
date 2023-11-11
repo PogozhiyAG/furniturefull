@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import PageHeader from "../../components/page-header/page-header";
 import ProductBasketCart from "../../components/product-basket-cart/product-basket-cart";
 import CheckoutForm from "../../components/checkout-form/checkout-form";
-import './CartPage.css'
+import './CartPage.scss'
 
 const CartPage = ({ basket }) => {
     const clearBasketClickHandler = () => basket.clear();

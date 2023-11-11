@@ -1,6 +1,6 @@
 import React from "react";
 import utils from "../../js/utils";
-import './checkout-form.css'
+import './checkout-form.scss'
 
 const CheckoutForm = ({basket}) => {
     const dummy = () => 1;

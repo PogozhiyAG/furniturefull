@@ -1,7 +1,7 @@
 import React from "react";
 import NumericMinMax from "../numeric-min-max/numeric-min-max";
 import utils from "../../js/utils";
-import './product-basket-cart.css'
+import './product-basket-cart.scss'
 
 const ProductBasketCart = ({productEntry, basket}) => {
     const onCountChange = (count) => basket.set(productEntry.product, count);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../../css/style.css'
-import './page-header.css'
+import '../../css/style.scss'
+import './page-header.scss'
 
 const PageHeader = ({basket}) => { 
     const getBasketCountText = () => {

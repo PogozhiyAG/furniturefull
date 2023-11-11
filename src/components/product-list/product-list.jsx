@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProductCart from "../product-cart/product-cart";
-import './product-list.css'
+import './product-list.scss'
 
 const ProductList = ( {catalogData, basket} ) => {
     const [sortOrder, setSortOrder] = useState('');

@@ -24,7 +24,7 @@ const ProductBasketCart = ({productEntry, basket}) => {
                 </div>
             </div>
             
-            <NumericMinMax min={1} max={productEntry.product.available} initialValue={productEntry.quantity} onchange={onCountChange}/>
+            <NumericMinMax min={1} max={productEntry.product.available} value={productEntry.quantity} onChange={onCountChange}/>
         </div>
     );
 }

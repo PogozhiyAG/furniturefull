@@ -1,33 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import './numeric-min-max.scss';
 
-const NumericMinMax = ({min, max, initialValue, onchange}) => {
-    const [current, setCurrent] = useState(initialValue);
+const NumericMinMax = ({min, max, value, onChange}) => {    
+    const isValid = newValue => !isNaN(newValue) && newValue >= min && newValue <= max;
 
-    useEffect(() => {
-        if(onchange){
-            onchange(current);
-        }
-    }, [current]);
-
-    const isValid = value => !isNaN(value) && value >= min && value <= max;
-    
-    const trySetValue = (last, newValue) => {
+    const tryChangeValue = (newValue) => {
         if(isValid(newValue)){
-            return newValue;
+            onChange(newValue);
         }
-        return last;
     };
+    
+    const input = event => tryChangeValue(Number(event.target.value));
 
-    const input = event => setCurrent(last => trySetValue(last, Number(event.target.value)));
+    const up = () => tryChangeValue(value + 1);    
 
-    const up = () => setCurrent(last => trySetValue(last, last + 1));
-
-    const down = () => setCurrent(last => trySetValue(last, last - 1));
+    const down = () => tryChangeValue(value - 1);
     
     return (    
         <span className="numeric-input__container">
-            <input onInput={input} className="numeric-input__input" pattern="[0-9]+" value={current} />
+            <input onChange={input} className="numeric-input__input" pattern="[0-9]+" value={value} />
             <button onClick={up} className="numeric-input__button numeric-input__button_up">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M6 9L8 7L10 9" stroke="#CACDD8" strokeWidth="1.6" strokeLinecap="round"/>

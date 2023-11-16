@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import CartPage from "./pages/CartPage/CartPage";
@@ -6,42 +6,66 @@ import catalogData from "./data/data"
 import Basket from "./js/basket";
 import './css/style.scss'
 
-const App = () => {    
-    const [basketEntries, setbasketEntries] = useState([]);
+const Constants = {
+    STORAGE_KEY_BASKET: 'basket'
+}
 
-    const STORAGE_KEY_BASKET = 'basket';
+class App extends React.Component{
+    constructor(props){
+        super(props);
 
-    useEffect(() => {
-        const data = JSON.parse(window.localStorage.getItem(STORAGE_KEY_BASKET));
+        this.setBasketEntries = this.setBasketEntries.bind(this);
+        this.loadBasket = this.loadBasket.bind(this);
+        this.saveBasket = this.saveBasket.bind(this);
+
+        this.state = {
+            basketEntries: this.loadBasket()
+        };
+    }
+
+    
+    loadBasket(){
+        const data = JSON.parse(window.localStorage.getItem(Constants.STORAGE_KEY_BASKET));
         if ( data !== null ) {            
-            setbasketEntries(
-                data.map(d => { return {
-                    product: catalogData.find(p => p.id == d.id),
-                    quantity: d.quantity
-                }})
-                .filter(e => e.product)
-            );
+            return data.map(d => { return {
+                product: catalogData.find(p => p.id === d.id),
+                quantity: d.quantity
+            }})
+            .filter(e => e.product);
         }
-      }, []);
+        return [];
+    }
 
-    useEffect(() => {
-        window.localStorage.setItem(STORAGE_KEY_BASKET, JSON.stringify(basketEntries.map(e => { return { id: e.product.id, quantity: e.quantity }})));        
-    }, [basketEntries]);
+    saveBasket(){
+        window.localStorage.setItem(Constants.STORAGE_KEY_BASKET, JSON.stringify(this.state.basketEntries.map(e => ( { 
+            id: e.product.id, 
+            quantity: e.quantity 
+        }))));
+    }
 
-    const basket = new Basket(basketEntries, setbasketEntries);
+    setBasketEntries(newValue){
+        this.setState({
+            basketEntries: newValue
+        });
+        this.saveBasket();        
+    }
 
-    const router = createBrowserRouter([
-        {
-            path: "/",
-            element: <CatalogPage catalogData={catalogData} basket={basket} />,
-        },
-        {
-            path: "cart",
-            element: <CartPage basket={basket}/>,
-        },
-    ]);
+    render(){
+        const basket = new Basket(this.state.basketEntries, this.setBasketEntries);
 
-    return <RouterProvider router={router} />;
-};
+        const router = createBrowserRouter([
+            {
+                path: "/",
+                element: <CatalogPage catalogData={catalogData} basket={basket} />,
+            },
+            {
+                path: "cart",
+                element: <CartPage basket={basket}/>,
+            },
+        ]);
+    
+        return <RouterProvider router={router} />;
+    }
+}
 
 export default App;

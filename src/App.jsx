@@ -46,8 +46,11 @@ class App extends React.Component{
     setBasketEntries(newValue){
         this.setState({
             basketEntries: newValue
-        });
-        this.saveBasket();        
+        });      
+    }
+
+    componentDidUpdate(){
+        this.saveBasket();
     }
 
     render(){
